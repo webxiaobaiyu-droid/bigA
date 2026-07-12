@@ -1717,10 +1717,10 @@ button.hot-stock-scan-row.selected {
   position: relative;
   min-height: 82px;
   display: grid;
-  grid-template-columns: 7px 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto auto;
   gap: 7px 9px;
-  padding: 10px 8px 9px 0;
+  padding: 10px 8px 9px 11px;
   border: 1px solid rgba(var(--border-rgb), 0.07);
   border-radius: 8px;
   background: var(--bg-panel-alt);
@@ -1728,31 +1728,10 @@ button.hot-stock-scan-row.selected {
   cursor: pointer;
 }
 
-.quote-drag {
-  position: absolute;
-  z-index: 2;
-  top: 34px;
-  left: 2px;
-  color: var(--text-muted);
-  cursor: grab;
-}
-
-.quote-row[draggable='true']:active .quote-drag {
-  cursor: grabbing;
-}
-
 .quote-row:hover,
 .quote-row.selected {
   border-color: rgba(var(--accent-rgb), 0.52);
   background: var(--bg-tooltip);
-}
-
-.quote-pin {
-  grid-row: 1 / 3;
-  width: 3px;
-  height: 100%;
-  border-radius: 999px;
-  margin-left: 5px;
 }
 
 .up-bg {
@@ -1782,7 +1761,7 @@ button.hot-stock-scan-row.selected {
 }
 
 .quote-tags {
-  grid-column: 2 / 4;
+  grid-column: 1 / 3;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;

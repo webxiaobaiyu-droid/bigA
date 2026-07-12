@@ -417,8 +417,6 @@
             @dragover.prevent
             @drop="dropWatchRow(row.meta.code)"
           >
-            <GripVertical v-if="sortKey === 'custom'" class="quote-drag" :size="13" />
-            <span class="quote-pin" :class="row.quote.changePct >= 0 ? 'up-bg' : 'down-bg'" />
             <div class="quote-name">
               <strong>{{ row.meta.name }}</strong>
               <span>{{ row.meta.code }} · {{ row.meta.sector }}</span>
@@ -737,7 +735,7 @@
 
 <script setup lang="ts">
 import { computed, defineAsyncComponent, onBeforeUnmount, onMounted, ref, watch } from 'vue';
-import { Activity, ArrowLeft, Bell, BookOpen, Database, Gauge, GripVertical, Layers3, ListFilter, Newspaper, PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, Pin, Plus, Radio, RefreshCw, Search, Settings2, Star, TrendingDown, TrendingUp, X } from '@lucide/vue';
+import { Activity, ArrowLeft, Bell, BookOpen, Database, Gauge, Layers3, ListFilter, Newspaper, PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, Pin, Plus, Radio, RefreshCw, Search, Settings2, Star, TrendingDown, TrendingUp, X } from '@lucide/vue';
 import KLineChart from '@/components/KLineChart.vue';
 import AlertCenter from '@/components/AlertCenter.vue';
 import AppearanceSettings from '@/components/AppearanceSettings.vue';
