@@ -3,175 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BigA 是面向 A 股监盘、分时、K 线、龙虎榜、资金流向和交易知识库的轻量桌面客户端。" />
-    <meta name="theme-color" content="#f7f8f8" />
-    <title>BigA - A 股桌面监盘端</title>
+    <meta name="description" content="BigA 是一个将市场情绪、板块资金、分时 K 线、龙虎榜、新闻与交易训练整合在一起的轻量 A 股桌面监盘端。" />
+    <meta name="theme-color" content="#f4f5f2" />
+    <title>BigA - 为真正看盘而做</title>
     <link rel="icon" href="assets/biga-icon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="nav-shell">
-        <a class="brand" href="#top" aria-label="BigA 首页">
-          <img src="assets/biga-icon.png" alt="" />
-          <span>BigA</span>
-          <small>Monitor</small>
-        </a>
+      <div class="shell nav-shell">
+        <a class="brand" href="#top" aria-label="BigA 首页"><img src="assets/biga-icon.png" alt="" /><strong>BigA</strong><span>监盘终端</span></a>
         <nav aria-label="官网导航">
-          <a href="#workspace">产品</a>
-          <a href="#workflow">工作流</a>
-          <a href="#install">下载</a>
-          <a class="release-link nav-github" href="#" target="_blank" rel="noreferrer">GitHub <b>↗</b></a>
+          <a href="#product">产品</a>
+          <a href="#workflow">使用方式</a>
+          <a href="#data">数据与边界</a>
+          <a href="#download">下载</a>
+          <a class="github release-link" href="#" target="_blank" rel="noreferrer">GitHub <b>↗</b></a>
         </nav>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero page-width">
+      <section class="hero shell">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> A-SHARE DESKTOP TERMINAL</p>
-          <h1>读懂盘面，<br /><i>少一点切换。</i></h1>
-          <p class="lead">把市场情绪、板块资金、个股分时与龙虎榜放在同一条判断路径里。BigA 为需要专注看盘的人而做。</p>
+          <p class="eyebrow"><i></i> A-SHARE DESKTOP TERMINAL</p>
+          <h1>先理解盘面，<br /><em>再做判断。</em></h1>
+          <p class="hero-lead">BigA 把市场情绪、板块资金、个股分时和龙虎榜放回同一条观察路径。少一点跳转，给判断留出更多空间。</p>
           <div class="hero-actions">
-            <a class="button button-dark release-link" href="#" target="_blank" rel="noreferrer">获取桌面端 <b>↓</b></a>
-            <a class="text-link" href="#workspace">看一眼工作台 <b>→</b></a>
+            <a class="button button-dark release-link" href="#" target="_blank" rel="noreferrer">下载桌面端 <b>↓</b></a>
+            <a class="button button-quiet" href="#workflow">看看怎么用 <b>→</b></a>
           </div>
-          <div class="hero-meta">
-            <span>Vue 3 + Electron</span>
-            <span>本地优先</span>
-            <span>开源</span>
-          </div>
+          <div class="hero-notes"><span>Vue 3 + Electron</span><span>真实数据源</span><span>本机优先</span></div>
         </div>
 
-        <div class="workbench" aria-label="BigA 行情工作台预览">
-          <div class="workbench-bar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <span>BIGA / 市场工作台</span>
-            <small>07 / 12 &nbsp; 14:36</small>
+        <div class="hero-product" aria-label="BigA 真实新闻工作台截图">
+          <div class="product-note note-top"><b>01</b><span>应用内新闻详情</span></div>
+          <div class="product-note note-right"><b>实时</b><span>数据状态明确标识</span></div>
+          <div class="product-frame">
+            <div class="frame-chrome"><i></i><i></i><i></i><span>BigA Monitor</span><b>● 运行中</b></div>
+            <img src="assets/biga-news-workspace.jpg" alt="BigA 新闻工作台，包含顶部功能区和实时新闻列表" />
           </div>
-          <div class="workbench-body">
-            <aside class="preview-sidebar">
-              <strong>BigA</strong>
-              <span class="active">市</span>
-              <span>自</span>
-              <span>新</span>
-              <span>知</span>
-            </aside>
-            <div class="preview-main">
-              <div class="preview-tabs"><b>分时</b><span>日 K</span><span>周 K</span><span>月 K</span><small>600519</small></div>
-              <div class="quote-head">
-                <div><span>贵州茅台</span><strong>1,428.00</strong></div>
-                <em>+1.36%</em>
-                <small>+19.20 &nbsp; 今开 1,413.00</small>
-              </div>
-              <div class="chart-area">
-                <div class="chart-axis top">+10.00%</div>
-                <div class="chart-axis mid">0.00%</div>
-                <div class="chart-axis bottom">-10.00%</div>
-                <div class="chart-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="volume-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="chart-time"><span>09:30</span><span>10:30</span><span>11:30 / 13:00</span><span>14:00</span><span>15:00</span></div>
-              </div>
-            </div>
-            <aside class="preview-right">
-              <p>盘口</p>
-              <div class="order-row"><span>卖五</span><b>1,428.80</b><i></i></div>
-              <div class="order-row"><span>卖三</span><b>1,428.20</b><i></i></div>
-              <div class="order-row"><span>买一</span><b class="market-up">1,428.00</b><i></i></div>
-              <div class="order-row"><span>买三</span><b class="market-up">1,427.20</b><i></i></div>
-              <hr />
-              <p>今日资金</p>
-              <strong class="market-up">+ 3,249 万</strong>
-              <small>主力净流入</small>
-            </aside>
-          </div>
+          <div class="product-shadow"></div>
         </div>
       </section>
 
-      <section id="workspace" class="statement page-width">
-        <div class="section-mark">01</div>
-        <div>
-          <p class="eyebrow">A QUIETER WORKSPACE</p>
-          <h2>盘中只保留<br />真正影响判断的东西。</h2>
-        </div>
-        <p class="statement-copy">从市场到板块，再到个股。工作台遵循操盘时真正发生的顺序，新闻、财务和知识库在需要时出现，不争抢主视线。</p>
+      <section class="signal-tape" aria-label="核心功能速览">
+        <div class="shell tape-inner"><span>市场情绪</span><i></i><span>板块轮动</span><i></i><span>分时 / 日周月 K</span><i></i><span>席位 B/S</span><i></i><span>F10 财务</span><i></i><span>训练回放</span><i></i><span>本地预警</span></div>
       </section>
 
-      <section id="workflow" class="workflow page-width">
-        <div class="workflow-header">
-          <p class="eyebrow">ONE FLOW, NOT MORE TABS</p>
-          <p>盘前建立观察范围，盘中验证资金与走势，盘后复盘每次判断。</p>
-        </div>
-        <div class="workflow-grid">
-          <article>
-            <span>01 / 市场</span>
-            <h3>先判断今天<br />值不值得出手</h3>
-            <p>市场情绪、涨跌停、连板高度和北向/主力资金，在一个视图里读完。</p>
-            <div class="mini-market"><b>3,489.17</b><em>+0.84%</em><i></i></div>
+      <section id="product" class="manifest shell reveal">
+        <div class="section-index">01 / PRODUCT</div>
+        <div class="manifest-title"><p class="eyebrow">KEEP THE CONTEXT</p><h2>不是再放一个行情软件。<br />而是整理<span>看盘时的顺序。</span></h2></div>
+        <div class="manifest-copy"><p>开盘后先看市场能否承接，再确认资金在哪些方向聚集，最后才进入个股。BigA 的六个工作区按这个节奏组织，关键信息不会藏在另一个窗口。</p><a href="#workflow" class="inline-link">从工作流开始 <b>→</b></a></div>
+      </section>
+
+      <section id="workflow" class="workflow shell">
+        <div class="workflow-head reveal"><p class="eyebrow">FROM MARKET TO A DECISION</p><div><h2>一条完整的<br />盘中观察路径。</h2><p>不是推送买卖建议。BigA 提供事实、结构和回放，最终判断仍然在你手里。</p></div></div>
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step-number">01</div>
+            <div><p class="step-kicker">开盘前 / 盘中</p><h3>先把市场温度看清楚。</h3><p class="step-copy">上涨、下跌、涨跌停、炸板、连板高度和指数状态组成可解释的市场情绪，不把单一涨幅当成全部答案。</p></div>
+            <div class="market-preview"><div class="market-stat"><span>情绪温度</span><b>68</b><em>偏暖</em></div><div class="market-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="market-meta"><span>上涨 3,126</span><span>涨停 67</span><span>炸板 19</span></div></div>
           </article>
-          <article>
-            <span>02 / 板块</span>
-            <h3>确认资金<br />正往哪里去</h3>
-            <p>热门板块、资金流向、强度变化和龙虎榜，把异动变成可追踪的线索。</p>
-            <ul class="sector-list"><li><b>半导体</b><em>+3.42%</em></li><li><b>AI 算力</b><em>+2.81%</em></li><li><b>机器人</b><em>+1.97%</em></li></ul>
+          <article class="step reveal">
+            <div class="step-number">02</div>
+            <div><p class="step-kicker">确认方向</p><h3>顺着资金，找到主线与分歧。</h3><p class="step-copy">热门板块把涨幅、资金、扩散度和龙头确认放在同一行；行业轮动记录连续流入、流出与资金加速度。</p></div>
+            <div class="sector-preview"><div><span>半导体</span><b>+3.42%</b><i><em></em></i></div><div><span>AI 算力</span><b>+2.81%</b><i><em></em></i></div><div><span>机器人</span><b>+1.97%</b><i><em></em></i></div><small>按强度、资金、涨幅切换排序</small></div>
           </article>
-          <article>
-            <span>03 / 个股</span>
-            <h3>进入分时，<br />再落到交易细节</h3>
-            <p>涨跌停坐标、午盘、成交量、MACD 与席位 B/S 点同步显示，避免断章取义。</p>
-            <div class="bs-mini"><b>B</b><i></i><em>S</em><i></i><b>B</b></div>
+          <article class="step reveal">
+            <div class="step-number">03</div>
+            <div><p class="step-kicker">进入个股</p><h3>让每一笔走势都保留上下文。</h3><p class="step-copy">分时完整覆盖 A 股交易时段，午盘边界、昨收 0% 线和涨跌停范围清楚可见；日周月 K 与指标、F10 和新闻并列。</p></div>
+            <div class="stock-preview"><div class="stock-quote"><span>600519 贵州茅台</span><b>1,428.00</b><em>+1.36%</em></div><div class="price-plot"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="stock-tags"><span>MACD</span><span>换手 0.38%</span><b>B</b><i></i><em>S</em></div></div>
           </article>
         </div>
       </section>
 
-      <section class="signal-section">
-        <div class="page-width signal-inner">
-          <div class="signal-copy">
-            <p class="eyebrow">FROM DATA TO CONTEXT</p>
-            <h2>不是更多数字，<br />是更完整的上下文。</h2>
-            <p>真实行情、新闻与财务数据统一到股票详情。可折叠的边栏让分时和 K 线始终占据主视线。</p>
-            <a class="text-link" href="#install">开始使用 <b>→</b></a>
-          </div>
-          <div class="signal-board">
-            <div class="signal-board-top"><span>SH 000001</span><b>市场状态</b><i>实时</i></div>
-            <div class="signal-stats"><div><span>上涨</span><b class="market-up">3,126</b></div><div><span>下跌</span><b class="market-down">1,482</b></div><div><span>涨停</span><b>67</b></div></div>
-            <div class="signal-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="signal-note"><span>主线</span><b>AI 算力</b><em class="market-up">净流入 42.6 亿</em></div>
+      <section class="feature-band">
+        <div class="shell feature-band-inner">
+          <div class="feature-band-copy reveal"><p class="eyebrow">REPEATABLE, NOT NOISY</p><h2>细节为看盘服务，<br />不是抢走注意力。</h2><p>宽屏时可折叠两侧面板，把空间交给图表。悬停查看 K 线细节，单击锁定，再用方向键在周期中切换。滚轮缩放已被禁用，避免盘中误触。</p><a class="inline-link" href="#data">了解数据处理 <b>→</b></a></div>
+          <div class="feature-list">
+            <article class="reveal"><span>01</span><h3>分时与 K 线</h3><p>分时、日线、周线、月线，支持前复权、不复权、后复权，搭配 VOL、MACD、RSI、KDJ 与 MA。</p><div class="feature-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="reveal"><span>02</span><h3>龙虎榜与席位</h3><p>合并同席位买卖，支持机构、游资、营业部筛选与排序。日 K 与分时展示公开 B/S 和推演标记。</p><div class="seat-list"><b>机构专用 <em>+8,432 万</em></b><b>沪股通专用 <em>+4,116 万</em></b><b>知名游资 <em>-2,080 万</em></b></div></article>
+            <article class="reveal"><span>03</span><h3>知识库与训练</h3><p>52 个术语、六类模式扫描、正反例、阈值实验和遮挡回放训练，让概念回到真实的价格与量能上。</p><div class="training-preview"><span>量价齐升</span><b>先判断，再揭晓</b><i>+5 日表现&nbsp;&nbsp; +3.64%</i></div></article>
           </div>
         </div>
       </section>
 
-      <section id="install" class="install page-width">
-        <div class="install-intro">
-          <p class="eyebrow">DOWNLOAD</p>
-          <h2>把 BigA 放到<br />你的桌面上。</h2>
-          <p>桌面端提供完整监盘体验，也欢迎直接从源码开始。</p>
+      <section class="modules shell">
+        <div class="modules-heading reveal"><div><p class="eyebrow">BUILT AROUND REAL WORK</p><h2>从盯盘到复盘，<br />每块都能接上。</h2></div><p>不需要先装一堆插件。每个模块围绕应用当前真实实现，使用同一套股票、行情、缓存和自选状态。</p></div>
+        <div class="module-grid">
+          <article class="module-card wide reveal"><div><span>NEWS / F10</span><h3>应用内读完整新闻<br />再回到股票。</h3><p>东方财富快讯与资讯为主、网易财经兜底。文章正文、关联标的、公司资料、公告和财务趋势都留在同一处。</p></div><div class="news-snippet"><small>东方财富 · 快讯 · 14:01</small><b>把信息留在工作台，而不是留在浏览器标签里。</b><p>新闻二级页会尽可能拉取完整正文，正文使用居中的阅读列展示。</p><i>阅读全文 →</i></div></article>
+          <article class="module-card reveal"><span>WATCHLIST</span><h3>自选，不只是一串代码。</h3><p>短线、趋势、观察、持仓分组，本地标签、排序、CSV/JSON 导入导出，以及跨页面即时同步。</p><div class="watch-chips"><b>短线</b><b>趋势</b><b>观察</b><b>持仓</b></div></article>
+          <article class="module-card reveal"><span>ALERTS</span><h3>在条件成立时提醒。</h3><p>价格、量比、成交额、均线、开板和板块异动等 12 类规则，带边沿触发和冷却去重。</p><div class="alert-sample"><i></i><span>中科曙光</span><b>成交额突破 8 亿</b></div></article>
+          <article class="module-card reveal"><span>APPEARANCE</span><h3>看盘环境由你决定。</h3><p>深色、浅色与金融金、量化蓝、墨玉青、朱砂红主题。涨红跌绿语义始终固定。</p><div class="theme-swatches"><i></i><i></i><i></i><i></i></div></article>
         </div>
-        <div class="install-content">
-          <div class="download-list">
-            <a class="release-link" href="#" target="_blank" rel="noreferrer"><span>macOS</span><b>DMG / ZIP</b><em>Apple Silicon + Intel</em><i>↓</i></a>
-            <a class="release-link" href="#" target="_blank" rel="noreferrer"><span>Windows</span><b>NSIS / ZIP</b><em>x64</em><i>↓</i></a>
-            <a class="release-link" href="#" target="_blank" rel="noreferrer"><span>Linux</span><b>AppImage / deb</b><em>x64</em><i>↓</i></a>
-          </div>
-          <div class="source-block">
-            <span>FROM SOURCE</span>
-            <code><i>$</i> git clone https://github.com/webxiaobaiyu-droid/bigA.git<br /><i>$</i> cd bigA && pnpm install<br /><i>$</i> pnpm run dev</code>
-          </div>
-        </div>
+      </section>
+
+      <section id="data" class="data-section">
+        <div class="shell data-layout"><div class="data-intro reveal"><p class="eyebrow">DATA WITH A CLEAR BOUNDARY</p><h2>快一点，也要<br />知道数据从哪里来。</h2><p>BigA 是只读监盘工具，不提供下单，不把来源、延迟和回退情况藏起来。行情状态会明确显示实时、延迟、陈旧、回退、异常与休市。</p></div><div class="data-table reveal"><div class="data-row head"><span>数据</span><span>主源</span><span>回退 / 处理</span></div><div class="data-row"><b>报价、分时、K 线</b><span>东方财富</span><em>新浪 + 本地聚合</em></div><div class="data-row"><b>五档盘口</b><span>新浪</span><em>供应商字段标准化</em></div><div class="data-row"><b>市场情绪、龙虎榜</b><span>东方财富</span><em>本机聚合 / 快照</em></div><div class="data-row"><b>资讯与正文</b><span>东方财富</span><em>网易财经兜底</em></div><div class="data-row"><b>预警、训练、错题本</b><span>本地计算</span><em>本机持久化</em></div><p>请求统一经过超时、重试、熔断、去重与上下文失效保护。接口缺失时不会把本机时间伪装成实时。</p></div></div>
+      </section>
+
+      <section id="download" class="download shell">
+        <div class="download-heading reveal"><p class="eyebrow">GET STARTED</p><h2>把 BigA 放在<br />离盘面最近的地方。</h2><p>下载桌面端直接使用，或从源码启动开发环境。</p></div>
+        <div class="download-content reveal"><div class="download-options"><a class="release-link" href="#" target="_blank" rel="noreferrer"><span>macOS</span><b>DMG / ZIP</b><em>Apple Silicon + Intel</em><i>↓</i></a><a class="release-link" href="#" target="_blank" rel="noreferrer"><span>Windows</span><b>NSIS / ZIP</b><em>x64</em><i>↓</i></a><a class="release-link" href="#" target="_blank" rel="noreferrer"><span>Linux</span><b>AppImage / deb</b><em>x64</em><i>↓</i></a></div><div class="terminal"><div><span>本地开发</span><b>pnpm</b></div><code><i>$</i> git clone https://github.com/webxiaobaiyu-droid/bigA.git<br /><i>$</i> cd bigA && pnpm install<br /><i>$</i> pnpm run dev</code><p>Vue 代码由 Vite 热更新，Electron 主进程变更会自动重启。开发时无需反复构建。</p></div></div>
       </section>
     </main>
 
-    <footer>
-      <div class="page-width footer-inner"><span>BigA Monitor <i>2026</i></span><div><a class="repo-doc-link" data-doc="PROJECT_ARCHITECTURE_AND_APIS.md" href="#">API 文档</a><a class="repo-doc-link" data-doc="DAILY_CHANGELOG.md" href="#">更新记录</a><a class="release-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
-    </footer>
+    <footer><div class="shell footer-inner"><a class="brand" href="#top"><img src="assets/biga-icon.png" alt="" /><strong>BigA</strong></a><span>为 A 股监盘与复盘而做 · 2026</span><div><a class="repo-doc-link" data-doc="PROJECT_ARCHITECTURE_AND_APIS.md" href="#">项目与 API</a><a class="repo-doc-link" data-doc="DAILY_CHANGELOG.md" href="#">更新记录</a><a class="release-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
 
     <script>
       const configuredRepo = document.documentElement.dataset.repo || '';
       const inferredRepo = (() => { const host = window.location.hostname; const pathRepo = window.location.pathname.split('/').filter(Boolean)[0] || ''; return host.endsWith('.github.io') && pathRepo ? `${host.replace('.github.io', '')}/${pathRepo}` : ''; })();
       const repo = configuredRepo || inferredRepo || 'webxiaobaiyu-droid/bigA';
-      const releaseUrl = `https://github.com/${repo}/releases/latest`;
-      document.querySelectorAll('.release-link').forEach((link) => { link.href = releaseUrl; });
+      document.querySelectorAll('.release-link').forEach((link) => { link.href = `https://github.com/${repo}/releases/latest`; });
       document.querySelectorAll('.repo-doc-link').forEach((link) => { link.href = `https://github.com/${repo}/blob/main/docs/${link.dataset.doc}`; });
+      const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }), { threshold: 0.14 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
     </script>
   </body>
 </html>
