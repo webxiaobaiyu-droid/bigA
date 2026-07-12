@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BigA 是面向 A 股监盘、分时、K 线、龙虎榜、资金流向和交易知识库的轻量桌面客户端。" />
+    <title>BigA Monitor</title>
+    <link rel="icon" href="assets/biga-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-topbar">
+      <a class="brand" href="#top" aria-label="BigA Monitor">
+        <img src="assets/biga-icon.png" alt="" />
+        <span>BigA</span>
+      </a>
+      <nav aria-label="官网导航">
+        <a href="#features">功能</a>
+        <a href="#downloads">下载</a>
+        <a href="#apis">数据</a>
+        <a class="release-link" href="#" target="_blank" rel="noreferrer">Release</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Vue 3 + Electron A 股监盘端</p>
+          <h1 id="hero-title">BigA Monitor</h1>
+          <p class="hero-copy">
+            为看盘、分时/K 线、资金流、龙虎榜席位、新闻和交易知识库做的轻量桌面终端。
+          </p>
+          <div class="hero-actions">
+            <a class="primary release-link" href="#" target="_blank" rel="noreferrer">下载安装包</a>
+            <a class="secondary" href="#features">查看功能</a>
+          </div>
+        </div>
+        <div class="ticker-strip" aria-label="核心能力">
+          <span>实时行情</span>
+          <span>分时/K 线</span>
+          <span>龙虎榜 B/S</span>
+          <span>市场情绪</span>
+          <span>交易知识库</span>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Monitor Workspace</p>
+          <h2>面向操盘视角的桌面工作区</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="metric red">分时</span>
+            <h3>价格、成交量和指标联动</h3>
+            <p>支持 A 股午休时段坐标、涨跌停边界、0% 中轴、MACD 等常用指标，减少看盘时的来回切换。</p>
+          </article>
+          <article class="feature-card">
+            <span class="metric green">资金</span>
+            <h3>板块监控与资金流向</h3>
+            <p>将市场情绪、行业资金、热门板块、热门个股拆成独立顶部标签，便于快速判断当日主线。</p>
+          </article>
+          <article class="feature-card">
+            <span class="metric amber">龙虎榜</span>
+            <h3>机构席位 B/S 点位</h3>
+            <p>龙虎榜支持本地过滤、席位合并、排序，以及点击机构查看对应分时买卖点。</p>
+          </article>
+          <article class="feature-card">
+            <span class="metric blue">知识库</span>
+            <h3>从术语到案例复盘</h3>
+            <p>内置量价、做 T、消息面和小作文等知识点，并结合真实 K 线案例输出标注、辅助线和解析。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="downloads" class="section download-band">
+        <div class="section-heading">
+          <p class="eyebrow">Release Downloads</p>
+          <h2>多平台安装包</h2>
+          <p>正式安装包由 GitHub Actions 在发布 tag 时自动构建，并附加到 GitHub Release。</p>
+        </div>
+        <div class="download-grid">
+          <a class="download-card release-link" href="#" target="_blank" rel="noreferrer">
+            <strong>macOS</strong>
+            <span>Apple Silicon / Intel</span>
+            <small>DMG + ZIP</small>
+          </a>
+          <a class="download-card release-link" href="#" target="_blank" rel="noreferrer">
+            <strong>Windows</strong>
+            <span>x64</span>
+            <small>NSIS + ZIP</small>
+          </a>
+          <a class="download-card release-link" href="#" target="_blank" rel="noreferrer">
+            <strong>Linux</strong>
+            <span>x64</span>
+            <small>AppImage + deb</small>
+          </a>
+        </div>
+      </section>
+
+      <section id="apis" class="section api-section">
+        <div class="section-heading">
+          <p class="eyebrow">Data Sources</p>
+          <h2>真实数据优先，失败时有兜底</h2>
+        </div>
+        <div class="api-layout">
+          <div>
+            <h3>行情与 K 线</h3>
+            <p>东方财富为主，新浪和腾讯作为部分盘口、资金、排行与回退数据源。</p>
+          </div>
+          <div>
+            <h3>新闻与公告</h3>
+            <p>东方财富资讯、网易财经和可选 RSSHub 聚合源统一标准化为本地新闻模型。</p>
+          </div>
+          <div>
+            <h3>本地增强</h3>
+            <p>市场情绪、行业资金、知识库案例和预警结果在本机侧计算，适合后续扩展策略能力。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>BigA Monitor</span>
+      <a class="repo-doc-link" data-doc="PROJECT_ARCHITECTURE_AND_APIS.md" href="#">项目逻辑与 API 说明</a>
+      <a class="repo-doc-link" data-doc="DAILY_CHANGELOG.md" href="#">每日更新记录</a>
+    </footer>
+
+    <script>
+      const configuredRepo = document.documentElement.dataset.repo || '';
+      const inferredRepo = (() => {
+        const host = window.location.hostname;
+        const pathRepo = window.location.pathname.split('/').filter(Boolean)[0] || '';
+        if (!host.endsWith('.github.io') || !pathRepo) return '';
+        return `${host.replace('.github.io', '')}/${pathRepo}`;
+      })();
+      const repo = configuredRepo || inferredRepo;
+      const releaseUrl = repo ? `https://github.com/${repo}/releases/latest` : 'https://github.com/';
+      document.querySelectorAll('.release-link').forEach((link) => {
+        link.href = releaseUrl;
+      });
+      document.querySelectorAll('.repo-doc-link').forEach((link) => {
+        const doc = link.dataset.doc;
+        link.href = repo && doc ? `https://github.com/${repo}/blob/main/docs/${doc}` : '#';
+      });
+    </script>
+  </body>
+</html>

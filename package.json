@@ -1,0 +1,125 @@
+{
+  "name": "big-a",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lightweight A-share monitoring terminal built with Vue 3 and Electron.",
+  "author": "BigA",
+  "packageManager": "pnpm@9.1.1",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:debug": "BIGA_OPEN_DEVTOOLS=1 node scripts/dev.mjs",
+    "dev:web": "vite --host 127.0.0.1",
+    "check": "vue-tsc --noEmit",
+    "validate:core": "node scripts/validate-core.mjs",
+    "validate:alerts": "node scripts/validate-alerts.mjs",
+    "validate:watchlist": "node scripts/validate-watchlist.mjs",
+    "validate:market-history": "node scripts/validate-market-history.mjs",
+    "validate:transport": "node scripts/validate-transport.mjs",
+    "validate:appearance": "node scripts/validate-appearance.mjs",
+    "build": "pnpm run check && vite build",
+    "dist:mac": "pnpm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg zip --arm64 --x64",
+    "dist:mac:arm64": "pnpm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg zip --arm64",
+    "dist:mac:x64": "pnpm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg zip --x64",
+    "dist:win": "pnpm run build && electron-builder --win nsis zip --x64",
+    "dist:linux": "pnpm run build && electron-builder --linux AppImage deb --x64",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.24.0",
+    "echarts": "^6.1.0",
+    "lightweight-charts": "^4.2.3",
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "electron": "^30.0.9",
+    "electron-builder": "^26.15.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vue-tsc": "^2.0.19"
+  },
+  "build": {
+    "appId": "com.biga.monitor",
+    "productName": "BigA",
+    "asar": true,
+    "npmRebuild": false,
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.finance",
+      "icon": "build/icon.icns",
+      "identity": null
+    },
+    "dmg": {
+      "title": "BigA ${version}",
+      "artifactName": "BigA-${version}-${arch}.${ext}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "BigA-${version}-win-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Finance",
+      "icon": "build/icon.iconset",
+      "artifactName": "BigA-${version}-linux-${arch}.${ext}"
+    }
+  }
+}
