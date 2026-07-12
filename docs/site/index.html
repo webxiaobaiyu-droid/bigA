@@ -9,122 +9,179 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-topbar">
+    <header class="site-header">
       <a class="brand" href="#top" aria-label="BigA Monitor">
         <img src="assets/biga-icon.png" alt="" />
         <span>BigA</span>
       </a>
       <nav aria-label="官网导航">
-        <a href="#features">功能</a>
-        <a href="#downloads">下载</a>
-        <a href="#apis">数据</a>
-        <a class="release-link" href="#" target="_blank" rel="noreferrer">Release</a>
+        <a href="#workspace">工作区</a>
+        <a href="#signals">信号</a>
+        <a href="#install">安装</a>
+        <a class="release-link" href="#" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-bg" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Vue 3 + Electron A 股监盘端</p>
-          <h1 id="hero-title">BigA Monitor</h1>
-          <p class="hero-copy">
-            为看盘、分时/K 线、资金流、龙虎榜席位、新闻和交易知识库做的轻量桌面终端。
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">A-share desktop terminal</p>
+          <h1>把看盘信息压到一屏里。</h1>
+          <p class="lead">
+            BigA 是一个 Vue 3 + Electron 的轻量 A 股监盘端。它把分时/K 线、龙虎榜席位、资金流、新闻和交易知识库放进一个可扩展工作区。
           </p>
           <div class="hero-actions">
-            <a class="primary release-link" href="#" target="_blank" rel="noreferrer">下载安装包</a>
-            <a class="secondary" href="#features">查看功能</a>
+            <a class="button primary release-link" href="#" target="_blank" rel="noreferrer">下载最新版</a>
+            <a class="button ghost" href="#workspace">查看设计</a>
           </div>
         </div>
-        <div class="ticker-strip" aria-label="核心能力">
-          <span>实时行情</span>
-          <span>分时/K 线</span>
-          <span>龙虎榜 B/S</span>
-          <span>市场情绪</span>
-          <span>交易知识库</span>
+
+        <aside class="terminal-panel" aria-label="BigA 终端摘要">
+          <div class="panel-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>market://biga</strong>
+          </div>
+          <div class="quote-line">
+            <small>上证指数</small>
+            <strong>3,489.17</strong>
+            <em class="up">+0.84%</em>
+          </div>
+          <div class="quote-grid">
+            <div>
+              <span>主线强度</span>
+              <strong>AI 算力</strong>
+            </div>
+            <div>
+              <span>净流入</span>
+              <strong class="up">+42.6 亿</strong>
+            </div>
+            <div>
+              <span>涨停</span>
+              <strong>67</strong>
+            </div>
+            <div>
+              <span>跌停</span>
+              <strong class="down">8</strong>
+            </div>
+          </div>
+          <div class="spark">
+            <i style="height: 34%"></i>
+            <i style="height: 52%"></i>
+            <i style="height: 48%"></i>
+            <i style="height: 72%"></i>
+            <i style="height: 61%"></i>
+            <i style="height: 84%"></i>
+            <i style="height: 67%"></i>
+            <i style="height: 76%"></i>
+            <i style="height: 58%"></i>
+            <i style="height: 91%"></i>
+            <i style="height: 73%"></i>
+            <i style="height: 88%"></i>
+          </div>
+          <div class="bs-row">
+            <span class="buy">B 机构净买</span>
+            <span class="sell">S 游资兑现</span>
+            <span>日内做 T</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="workspace" class="section split-section">
+        <div>
+          <p class="kicker">Workspace</p>
+          <h2>不是资讯堆叠，而是操盘顺序。</h2>
+        </div>
+        <div class="copy-block">
+          <p>
+            先判断市场情绪，再看板块资金，之后进入个股分时和 K 线。BigA 的页面按这个顺序组织，减少反复跳转，也给后续策略和自选股计划留接口。
+          </p>
         </div>
       </section>
 
-      <section id="features" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Monitor Workspace</p>
-          <h2>面向操盘视角的桌面工作区</h2>
+      <section id="signals" class="feature-strip" aria-label="核心能力">
+        <article>
+          <span>01</span>
+          <h3>分时 / K 线</h3>
+          <p>涨跌停边界、0% 中轴、午盘间隔、成交量和 MACD 指标联动。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>龙虎榜 B/S</h3>
+          <p>席位合并、机构过滤、买卖点映射到分时，方便看清资金行为。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>新闻与财务</h3>
+          <p>东方财富、网易财经与企业财务信息统一整理，股票详情内直接查看。</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>知识库案例</h3>
+          <p>量价齐升、日内做 T、小作文等知识点结合真实 K 线做教学标注。</p>
+        </article>
+      </section>
+
+      <section class="data-section">
+        <div class="data-copy">
+          <p class="kicker">Data Pipeline</p>
+          <h2>真实数据优先，本地能力兜底。</h2>
+          <p>
+            行情以东方财富为主，新浪与腾讯补充盘口、资金与排行。新闻和公告会标准化成本地模型；市场情绪、行业资金、知识库案例和预警在本机侧计算。
+          </p>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span class="metric red">分时</span>
-            <h3>价格、成交量和指标联动</h3>
-            <p>支持 A 股午休时段坐标、涨跌停边界、0% 中轴、MACD 等常用指标，减少看盘时的来回切换。</p>
-          </article>
-          <article class="feature-card">
-            <span class="metric green">资金</span>
-            <h3>板块监控与资金流向</h3>
-            <p>将市场情绪、行业资金、热门板块、热门个股拆成独立顶部标签，便于快速判断当日主线。</p>
-          </article>
-          <article class="feature-card">
-            <span class="metric amber">龙虎榜</span>
-            <h3>机构席位 B/S 点位</h3>
-            <p>龙虎榜支持本地过滤、席位合并、排序，以及点击机构查看对应分时买卖点。</p>
-          </article>
-          <article class="feature-card">
-            <span class="metric blue">知识库</span>
-            <h3>从术语到案例复盘</h3>
-            <p>内置量价、做 T、消息面和小作文等知识点，并结合真实 K 线案例输出标注、辅助线和解析。</p>
-          </article>
+        <div class="code-card" aria-label="数据源配置示例">
+          <div class="code-title">biga.config</div>
+          <pre><code>market.provider = eastmoney
+
+fallback.quote = sina
+fallback.rank = tencent
+
+news.primary = eastmoney
+news.backup = netease
+
+signals.local = true
+alerts.local = true</code></pre>
         </div>
       </section>
 
-      <section id="downloads" class="section download-band">
-        <div class="section-heading">
-          <p class="eyebrow">Release Downloads</p>
-          <h2>多平台安装包</h2>
-          <p>正式安装包由 GitHub Actions 在发布 tag 时自动构建，并附加到 GitHub Release。</p>
+      <section id="install" class="install-section">
+        <div class="install-head">
+          <p class="kicker">Install</p>
+          <h2>下载桌面安装包，或直接拉源码开发。</h2>
         </div>
-        <div class="download-grid">
-          <a class="download-card release-link" href="#" target="_blank" rel="noreferrer">
-            <strong>macOS</strong>
-            <span>Apple Silicon / Intel</span>
-            <small>DMG + ZIP</small>
+        <div class="install-grid">
+          <a class="install-card release-link" href="#" target="_blank" rel="noreferrer">
+            <span>macOS</span>
+            <strong>DMG / ZIP</strong>
+            <small>Apple Silicon + Intel</small>
           </a>
-          <a class="download-card release-link" href="#" target="_blank" rel="noreferrer">
-            <strong>Windows</strong>
-            <span>x64</span>
-            <small>NSIS + ZIP</small>
+          <a class="install-card release-link" href="#" target="_blank" rel="noreferrer">
+            <span>Windows</span>
+            <strong>NSIS / ZIP</strong>
+            <small>x64</small>
           </a>
-          <a class="download-card release-link" href="#" target="_blank" rel="noreferrer">
-            <strong>Linux</strong>
-            <span>x64</span>
-            <small>AppImage + deb</small>
+          <a class="install-card release-link" href="#" target="_blank" rel="noreferrer">
+            <span>Linux</span>
+            <strong>AppImage / deb</strong>
+            <small>x64</small>
           </a>
         </div>
-      </section>
-
-      <section id="apis" class="section api-section">
-        <div class="section-heading">
-          <p class="eyebrow">Data Sources</p>
-          <h2>真实数据优先，失败时有兜底</h2>
-        </div>
-        <div class="api-layout">
-          <div>
-            <h3>行情与 K 线</h3>
-            <p>东方财富为主，新浪和腾讯作为部分盘口、资金、排行与回退数据源。</p>
-          </div>
-          <div>
-            <h3>新闻与公告</h3>
-            <p>东方财富资讯、网易财经和可选 RSSHub 聚合源统一标准化为本地新闻模型。</p>
-          </div>
-          <div>
-            <h3>本地增强</h3>
-            <p>市场情绪、行业资金、知识库案例和预警结果在本机侧计算，适合后续扩展策略能力。</p>
-          </div>
+        <div class="command-card">
+          <pre><code>git clone https://github.com/webxiaobaiyu-droid/bigA.git
+cd bigA
+pnpm install
+pnpm run dev</code></pre>
         </div>
       </section>
     </main>
 
     <footer>
       <span>BigA Monitor</span>
-      <a class="repo-doc-link" data-doc="PROJECT_ARCHITECTURE_AND_APIS.md" href="#">项目逻辑与 API 说明</a>
-      <a class="repo-doc-link" data-doc="DAILY_CHANGELOG.md" href="#">每日更新记录</a>
+      <a class="repo-doc-link" data-doc="PROJECT_ARCHITECTURE_AND_APIS.md" href="#">API 说明</a>
+      <a class="repo-doc-link" data-doc="DAILY_CHANGELOG.md" href="#">更新记录</a>
+      <a class="release-link" href="#" target="_blank" rel="noreferrer">Release</a>
     </footer>
 
     <script>
@@ -135,14 +192,14 @@
         if (!host.endsWith('.github.io') || !pathRepo) return '';
         return `${host.replace('.github.io', '')}/${pathRepo}`;
       })();
-      const repo = configuredRepo || inferredRepo;
-      const releaseUrl = repo ? `https://github.com/${repo}/releases/latest` : 'https://github.com/';
+      const repo = configuredRepo || inferredRepo || 'webxiaobaiyu-droid/bigA';
+      const releaseUrl = `https://github.com/${repo}/releases/latest`;
       document.querySelectorAll('.release-link').forEach((link) => {
         link.href = releaseUrl;
       });
       document.querySelectorAll('.repo-doc-link').forEach((link) => {
         const doc = link.dataset.doc;
-        link.href = repo && doc ? `https://github.com/${repo}/blob/main/docs/${doc}` : '#';
+        link.href = doc ? `https://github.com/${repo}/blob/main/docs/${doc}` : '#';
       });
     </script>
   </body>
