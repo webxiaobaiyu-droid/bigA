@@ -24,7 +24,7 @@ jobs:
             os: windows-latest
             command: pnpm exec electron-builder --win nsis zip --x64 --publish never
           - name: Linux
-            os: ubuntu-latest
+            os: ubuntu-22.04
             command: pnpm exec electron-builder --linux AppImage deb --x64 --publish never
 
     steps:
