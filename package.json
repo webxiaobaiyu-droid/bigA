@@ -1,6 +1,6 @@
 {
   "name": "big-a",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Lightweight A-share monitoring terminal built with Vue 3 and Electron.",
   "author": "BigA",
