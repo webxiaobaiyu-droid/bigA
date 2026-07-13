@@ -134,11 +134,23 @@ img {
   max-width: 540px;
   font-size: clamp(48px, 5.2vw, 76px);
   font-weight: 720;
-  line-height: 0.99;
+  line-height: 1;
 }
 
 .hero h1 span {
+  display: block;
+}
+
+.hero h1 .hero-name {
+  color: var(--ink);
+}
+
+.hero h1 .hero-title {
+  margin-top: 8px;
   color: var(--accent);
+  font-size: 0.72em;
+  line-height: 1.08;
+  white-space: nowrap;
 }
 
 .hero-lead {
@@ -631,7 +643,7 @@ footer {
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 44px;
-    padding: 56px 0 32px;
+    padding: 48px 0 32px;
   }
 
   .hero h1 {
