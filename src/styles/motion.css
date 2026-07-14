@@ -1,0 +1,14 @@
+
+.tab-empty.compact {
+  min-height: 220px;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

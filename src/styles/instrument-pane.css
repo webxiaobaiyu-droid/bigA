@@ -1,0 +1,152 @@
+.chart-pane {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 78px minmax(280px, 1fr) 250px;
+  background: var(--bg-app);
+}
+
+.chart-pane.finance-expanded {
+  grid-template-rows: 78px minmax(230px, 1fr) clamp(350px, 48vh, 450px);
+}
+
+.empty-workspace {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  background: var(--bg-app);
+}
+
+.empty-panel {
+  width: min(360px, calc(100% - 48px));
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  border: 1px solid rgba(var(--border-rgb), 0.08);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+.empty-panel strong {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.empty-panel span {
+  font-size: 12px;
+}
+
+.instrument-bar {
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) minmax(132px, auto) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(var(--border-rgb), 0.08);
+}
+
+.instrument-title {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.instrument-watch-button {
+  flex: 0 0 auto;
+  margin-left: 2px;
+}
+
+.market-badge {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--bg-muted);
+  color: var(--accent-bright);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.instrument-title h1 {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: 21px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.instrument-title span {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.instrument-price {
+  min-width: 132px;
+  text-align: right;
+}
+
+.instrument-price strong {
+  display: block;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.instrument-price span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.chart-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-toggle {
+  height: 34px;
+  width: 36px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 1px solid rgba(var(--border-rgb), 0.08);
+  border-radius: 7px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tool-toggle.active {
+  color: var(--accent-bright);
+  border-color: rgba(var(--accent-rgb), 0.5);
+}
+
+.tool-toggle span {
+  display: none;
+}
+
+.chart-surface {
+  min-height: 0;
+  overflow: hidden;
+  padding: 12px 14px 6px;
+}
+
+.chart-surface > .tab-empty {
+  height: 100%;
+}
+
+.kline-chart {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

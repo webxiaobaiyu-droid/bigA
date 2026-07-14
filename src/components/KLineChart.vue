@@ -142,6 +142,9 @@ const AFTERNOON_START_MINUTE = 13 * 60;
 const AFTERNOON_END_MINUTE = 15 * 60;
 const COMPRESSED_NOON_GAP_MINUTES = AFTERNOON_START_MINUTE - MORNING_END_MINUTE;
 const AFTERNOON_RENDER_OFFSET_SECONDS = 1;
+const INTRADAY_VOLUME_TOP_MARGIN = 0.78;
+// Keep the lower price limit and its axis label clear of the volume pane.
+const INTRADAY_PRICE_SCALE_MARGINS = { top: 0.04, bottom: 0.3 };
 
 let chart: IChartApi | null = null;
 let candleSeries: ISeriesApi<'Candlestick'> | null = null;
@@ -341,7 +344,7 @@ async function mountChart() {
   });
   volumeSeries.priceScale().applyOptions({
     scaleMargins: {
-      top: 0.78,
+      top: INTRADAY_VOLUME_TOP_MARGIN,
       bottom: 0
     }
   });
@@ -470,7 +473,11 @@ function syncChart() {
   kdjDSeries.applyOptions({ visible: activeIndicator === 'kdj' });
   kdjJSeries.applyOptions({ visible: activeIndicator === 'kdj' });
   chart?.priceScale('right').applyOptions({
-    scaleMargins: isIntraday ? { top: 0, bottom: 0 } : activeIndicator === 'none' ? { top: 0.08, bottom: 0.08 } : { top: 0.08, bottom: 0.24 }
+    scaleMargins: isIntraday
+      ? INTRADAY_PRICE_SCALE_MARGINS
+      : activeIndicator === 'none'
+        ? { top: 0.08, bottom: 0.08 }
+        : { top: 0.08, bottom: 0.24 }
   });
   syncChartGuides(isIntraday);
   syncZeroPriceLine(isIntraday);

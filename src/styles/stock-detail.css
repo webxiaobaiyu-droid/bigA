@@ -1,0 +1,156 @@
+.detail-block {
+  min-width: 0;
+  border: 1px solid rgba(var(--border-rgb), 0.08);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+}
+
+.detail-pane {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.detail-pane.collapsed {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px 5px;
+}
+
+.detail-block {
+  padding: 12px;
+}
+
+.detail-header {
+  min-height: 28px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.quote-focus {
+  background:
+    linear-gradient(180deg, rgba(var(--accent-rgb), 0.06), transparent),
+    var(--bg-elevated);
+}
+
+.price-line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0 12px;
+}
+
+.price-line strong {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.price-line div {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 3px;
+  font-weight: 700;
+}
+
+.quote-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px 10px;
+}
+
+.quote-matrix span {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.quote-matrix strong {
+  font-size: 12px;
+  text-align: right;
+}
+
+.order-book {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.book-row,
+.spread-line,
+.adapter-row,
+.indicator-stack div {
+  height: 26px;
+  display: grid;
+  grid-template-columns: 46px 1fr 70px;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.book-row strong {
+  text-align: right;
+}
+
+.book-row em {
+  color: var(--text-secondary);
+  font-style: normal;
+  text-align: right;
+}
+
+.book-row.ask strong {
+  color: var(--market-up);
+}
+
+.book-row.bid strong {
+  color: var(--market-down);
+}
+
+.spread-line {
+  height: 30px;
+  grid-template-columns: 1fr auto;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--bg-app);
+}
+
+.mini-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 6px;
+  background: var(--bg-app);
+}
+
+.mini-tabs button {
+  height: 22px;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 7px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.mini-tabs button.active {
+  background: var(--bg-muted);
+  color: var(--accent-bright);
+}
+
+.indicator-stack {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.indicator-stack div {
+  grid-template-columns: 1fr auto;
+  padding: 0 9px;
+  border-radius: 6px;
+  background: var(--bg-tooltip);
+}

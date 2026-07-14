@@ -14,11 +14,22 @@ try {
   assert.deepEqual(appearance.normalizeAppearance({ mode: 'unknown', theme: 'unknown' }), { mode: 'dark', theme: 'amber' }, '无效配置回退默认');
   assert.deepEqual(appearance.APPEARANCE_THEMES.map((item) => item.key), ['amber', 'azure', 'jade', 'crimson'], '内置四套主题');
 
-  const css = await readFile(path.join(root, 'src/styles.css'), 'utf8');
+  const css = await readCssBundle(path.join(root, 'src/styles.css'));
   assert.match(css, /:root\[data-mode='light'\]/, '存在浅色模式变量');
   for (const key of ['azure', 'jade', 'crimson']) assert.match(css, new RegExp(`data-theme='${key}'`), `${key} 主题变量存在`);
   assert.doesNotMatch(css, /--([a-z-]+):\s*var\(--\1\)/, '主题变量不能循环引用自身');
   console.log('Appearance validation passed: defaults, four themes, light mode and CSS variable integrity.');
 } finally {
   await server.close();
+}
+
+async function readCssBundle(file, seen = new Set()) {
+  const resolved = path.resolve(file);
+  if (seen.has(resolved)) return '';
+  seen.add(resolved);
+
+  const source = await readFile(resolved, 'utf8');
+  const imports = [...source.matchAll(/@import\s+['"]([^'"]+\.css)['"]\s*;/g)];
+  const dependencies = await Promise.all(imports.map((match) => readCssBundle(path.resolve(path.dirname(resolved), match[1]), seen)));
+  return `${source}\n${dependencies.join('\n')}`;
 }

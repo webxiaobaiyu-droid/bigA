@@ -1,0 +1,34 @@
+.adapter-row {
+  grid-template-columns: 1fr auto;
+}
+
+.adapter-row strong {
+  color: var(--accent-bright);
+  font-size: 11px;
+}
+
+.muted {
+  color: var(--text-muted) !important;
+}
+
+.up {
+  color: var(--market-up) !important;
+}
+
+.down {
+  color: var(--market-down) !important;
+}
+
+.watch {
+  color: var(--accent-bright) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--bg-muted);
+}

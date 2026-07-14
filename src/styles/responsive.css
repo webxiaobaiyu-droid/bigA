@@ -1,0 +1,30 @@
+
+@media (max-width: 1260px) {
+  body {
+    min-width: 1040px;
+  }
+
+  .top-stat {
+    display: none;
+  }
+
+  .brand {
+    min-width: 125px;
+  }
+
+  .workspace {
+    grid-template-columns: 268px minmax(520px, 1fr) 306px;
+  }
+
+  .instrument-bar {
+    gap: 10px;
+  }
+
+  .instrument-price {
+    min-width: 124px;
+  }
+
+  .top-tabs button {
+    padding: 0 8px;
+  }
+}
