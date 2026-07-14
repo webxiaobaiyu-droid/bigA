@@ -100,7 +100,7 @@ img {
   color: var(--accent);
 }
 
-.nav-download {
+.nav-source {
   color: var(--accent);
   font-weight: 700;
 }
@@ -125,7 +125,7 @@ img {
 .section-heading h2,
 .knowledge-copy h2,
 .data-layout h2,
-.download-heading h2 {
+.source-copy h2 {
   margin: 0;
   letter-spacing: 0;
 }
@@ -182,8 +182,7 @@ img {
   transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
-.button:active,
-.download-card:active {
+.button:active {
   transform: translateY(1px);
 }
 
@@ -490,91 +489,48 @@ img {
   font-size: 13px;
 }
 
-.download-story {
+.source-story {
   padding-block: 112px;
   background: #ffffff;
 }
 
-.download-heading {
-  max-width: 700px;
-}
-
-.download-grid {
+.source-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 52px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+  align-items: end;
+  gap: 72px;
 }
 
-.download-card {
-  position: relative;
-  display: flex;
-  min-height: 250px;
-  flex-direction: column;
-  align-items: flex-start;
+.source-copy {
+  max-width: 590px;
+}
+
+.source-copy > p:not(.eyebrow) {
+  margin: 22px 0 30px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.source-command {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  padding: 24px;
-  background: var(--surface);
-  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  padding: 28px;
+  background: #10161f;
+  color: #eaf0f8;
 }
 
-.download-card:hover,
-.download-card:focus-visible {
-  border-color: var(--accent);
-  background: var(--surface-blue);
-}
-
-.download-card.is-recommended {
-  border-color: var(--accent);
-  background: var(--surface-blue);
-}
-
-.download-card small {
-  color: var(--accent);
+.source-command p {
+  margin: 0 0 20px;
+  color: #a9b7c9;
   font: 700 12px var(--mono);
 }
 
-.download-card strong {
-  margin-top: 24px;
-  font-size: 20px;
-}
-
-.download-card > span:not(.recommendation) {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.download-card em {
-  margin-top: 6px;
-  color: var(--quiet);
-  font-size: 12px;
-  font-style: normal;
-}
-
-.download-card b {
-  margin-top: auto;
-  color: var(--accent);
-  font-size: 14px;
-}
-
-.recommendation {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  border-radius: var(--radius);
-  padding: 5px 7px;
-  background: var(--accent);
+.source-command code {
+  display: block;
+  overflow-x: auto;
   color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.download-note {
-  margin: 18px 0 0;
-  color: var(--quiet);
-  font-size: 12px;
+  font: 500 14px/2 var(--mono);
 }
 
 footer {
@@ -621,9 +577,7 @@ footer {
     gap: 42px;
   }
 
-  .download-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .source-layout { gap: 44px; }
 }
 
 @media (max-width: 800px) {
@@ -635,7 +589,7 @@ footer {
     position: relative;
   }
 
-  .nav-shell nav a:not(.nav-download) {
+  .nav-shell nav a:not(.nav-source) {
     display: none;
   }
 
@@ -680,14 +634,14 @@ footer {
   }
 
   .section,
-  .download-story {
+  .source-story {
     padding-block: 76px;
   }
 
   .section-heading h2,
   .knowledge-copy h2,
   .data-layout h2,
-  .download-heading h2 {
+  .source-copy h2 {
     font-size: clamp(34px, 10vw, 46px);
   }
 
@@ -731,12 +685,13 @@ footer {
     gap: 42px;
   }
 
-  .download-grid {
+  .source-layout {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .download-card {
-    min-height: 214px;
+  .source-command {
+    padding: 22px;
   }
 
   .footer-shell {

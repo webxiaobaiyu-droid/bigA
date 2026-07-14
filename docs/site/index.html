@@ -21,7 +21,7 @@
           <a href="#workflow">市场监控</a>
           <a href="#stock">分时与日 K</a>
           <a href="#knowledge">知识库</a>
-          <a class="nav-download" href="#download">下载</a>
+          <a class="nav-source" href="#source">源码构建</a>
         </nav>
       </div>
     </header>
@@ -33,7 +33,7 @@
           <h1><span class="hero-name">BigA</span><span class="hero-title">A 股监盘终端</span></h1>
           <p class="hero-lead">把市场情绪、热点、分时、日 K 和复盘放进同一个桌面工作区。</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#download">选择安装包</a>
+            <a class="button button-primary" href="#source">从源码开始</a>
           </div>
         </div>
 
@@ -192,67 +192,19 @@
         </div>
       </section>
 
-      <section id="download" class="download-story">
-        <div class="wrap">
-          <div class="download-heading">
-            <p class="eyebrow">下载 BigA</p>
-            <h2>选择你的系统，<br />安装包直接下载。</h2>
-            <p id="platform-note">无需进入 GitHub 页面。点击对应系统后，浏览器会直接下载安装包。</p>
+      <section id="source" class="source-story">
+        <div class="wrap source-layout">
+          <div class="source-copy">
+            <p class="eyebrow">源码构建</p>
+            <h2>不提供安装包，<br />从源码运行 BigA。</h2>
+            <p>BigA 当前仅以源码形式维护。请按自己的系统环境拉取项目、安装依赖并在本地运行或打包。</p>
+            <a class="button button-primary" href="https://github.com/webxiaobaiyu-droid/bigA" target="_blank" rel="noreferrer">查看源码</a>
           </div>
 
-          <div class="download-grid">
-            <a
-              class="download-card"
-              data-platform="mac"
-              href="https://github.com/webxiaobaiyu-droid/bigA/releases/download/v0.1.3/BigA-0.1.3-arm64.dmg"
-            >
-              <span class="recommendation" hidden>适合这台设备</span>
-              <small>macOS</small>
-              <strong>Apple 芯片</strong>
-              <span>M1 / M2 / M3 / M4</span>
-              <em>DMG，107.8 MiB</em>
-              <b>直接下载</b>
-            </a>
-
-            <a
-              class="download-card"
-              href="https://github.com/webxiaobaiyu-droid/bigA/releases/download/v0.1.3/BigA-0.1.3-x64.dmg"
-            >
-              <small>macOS</small>
-              <strong>Intel 芯片</strong>
-              <span>适用于 Intel Mac</span>
-              <em>DMG，113.1 MiB</em>
-              <b>直接下载</b>
-            </a>
-
-            <a
-              class="download-card"
-              data-platform="windows"
-              href="https://github.com/webxiaobaiyu-droid/bigA/releases/download/v0.1.3/BigA-0.1.3-win-x64.exe"
-            >
-              <span class="recommendation" hidden>适合这台设备</span>
-              <small>Windows</small>
-              <strong>x64 安装程序</strong>
-              <span>Windows 10 / 11</span>
-              <em>EXE，84.8 MiB</em>
-              <b>直接下载</b>
-            </a>
-
-            <a
-              class="download-card"
-              data-platform="linux"
-              href="https://github.com/webxiaobaiyu-droid/bigA/releases/download/v0.1.3/BigA-0.1.3-linux-x86_64.AppImage"
-            >
-              <span class="recommendation" hidden>适合这台设备</span>
-              <small>Linux</small>
-              <strong>x64 AppImage</strong>
-              <span>主流 x86_64 发行版</span>
-              <em>AppImage，118.8 MiB</em>
-              <b>直接下载</b>
-            </a>
+          <div class="source-command" aria-label="本地运行命令">
+            <p>本地运行</p>
+            <code>git clone https://github.com/webxiaobaiyu-droid/bigA.git<br />cd bigA<br />pnpm install<br />pnpm run dev</code>
           </div>
-
-          <p class="download-note">macOS 安装包暂未签名。首次打开时，可能需要在“隐私与安全性”中确认。</p>
         </div>
       </section>
     </main>
@@ -267,7 +219,5 @@
         <a href="https://github.com/webxiaobaiyu-droid/bigA" target="_blank" rel="noreferrer">查看开源项目</a>
       </div>
     </footer>
-
-    <script src="site.js"></script>
   </body>
 </html>

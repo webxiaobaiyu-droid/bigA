@@ -29,7 +29,7 @@ pnpm run dev:web
 BIGA_RSSHUB_BASE_URL=http://127.0.0.1:1200 VITE_BIGA_ENABLE_RSSHUB_NEWS=1 pnpm run dev
 ```
 
-## 打包与发布
+## 本地打包
 
 本地开发阶段不需要频繁构建。需要安装包时可以按平台打包：
 
@@ -39,24 +39,13 @@ pnpm run dist:win
 pnpm run dist:linux
 ```
 
-GitHub Release 已配置自动构建流程。推送 `v*` tag 后，GitHub Actions 会分别在 macOS、Windows、Linux runner 上构建安装包，并挂到对应 Release：
-
-```bash
-git tag v0.1.0
-git push origin main --tags
-```
-
-当前产物类型：
-
-- macOS：`dmg`、`zip`，支持 Apple Silicon 与 Intel。
-- Windows：`nsis` 安装器、`zip`，支持 x64。
-- Linux：`AppImage`、`deb`，支持 x64。
+项目不提供 GitHub Release 安装包。请从源码安装依赖后在本地运行，或按自己的系统环境执行上面的打包命令。
 
 ## 官网
 
 官网静态页位于 `docs/site`，GitHub Pages 工作流会在 `main` 分支更新后自动部署。
 
-下载按钮会根据 `xxx.github.io/仓库名` 自动推断 GitHub Release 地址。如果后续绑定自定义域名，可以在 `docs/site/index.html` 的 `<html>` 标签上增加 `data-repo="你的用户名/仓库名"`。
+官网不提供二进制下载，源码入口和本地运行方式位于页面末段。
 
 ## 扩展点
 
