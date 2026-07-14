@@ -16,7 +16,9 @@ jobs:
       - name: Delete all releases and binary assets
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
+          set -euo pipefail
           gh release list --limit 100 --json tagName --jq '.[].tagName' | while IFS= read -r tag; do
             gh release delete "$tag" --yes --cleanup-tag=false
           done
